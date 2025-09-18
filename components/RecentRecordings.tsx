@@ -86,7 +86,7 @@ export function RecentRecordings() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-text-primary">
+        <h2 className="text-xl font-semibold text-slate-900">
           Recent Recordings
         </h2>
         <Button variant="ghost" size="sm">
@@ -97,7 +97,7 @@ export function RecentRecordings() {
       {/* Processing Recordings */}
       {processingRecordings.length > 0 && (
         <div className="space-y-2">
-          <h3 className="text-sm font-medium text-text-secondary">Processing</h3>
+          <h3 className="text-sm font-medium text-slate-600">Processing</h3>
           {processingRecordings.map((recording) => (
             <RecordingListItem
               key={recording.recordingId}
@@ -112,7 +112,7 @@ export function RecentRecordings() {
       {/* Completed Recordings */}
       {completedRecordings.length > 0 && (
         <div className="space-y-2">
-          <h3 className="text-sm font-medium text-text-secondary">Completed</h3>
+          <h3 className="text-sm font-medium text-slate-600">Completed</h3>
           {completedRecordings.map((recording) => (
             <RecordingListItem
               key={recording.recordingId}
@@ -131,8 +131,8 @@ export function RecentRecordings() {
             <FileText className="w-8 h-8 text-gray-400" />
           </div>
           <div>
-            <p className="text-text-primary font-medium">No recordings yet</p>
-            <p className="text-sm text-text-secondary">
+            <p className="text-slate-900 font-medium">No recordings yet</p>
+            <p className="text-sm text-slate-600">
               Start your first meeting recording to see it here
             </p>
           </div>
@@ -141,8 +141,8 @@ export function RecentRecordings() {
 
       {/* Quick Stats */}
       {recordings.length > 0 && (
-        <div className="bg-surface rounded-lg p-4 shadow-card">
-          <h3 className="text-sm font-medium text-text-secondary mb-3">
+        <div className="bg-white rounded-lg p-4 shadow-lg border border-gray-200">
+          <h3 className="text-sm font-medium text-slate-600 mb-3">
             This Week
           </h3>
           <div className="grid grid-cols-3 gap-4">
@@ -150,30 +150,30 @@ export function RecentRecordings() {
               <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full mx-auto mb-1">
                 <Clock className="w-4 h-4 text-blue-600" />
               </div>
-              <div className="text-lg font-semibold text-text-primary">
+              <div className="text-lg font-semibold text-slate-900">
                 {Math.floor(recordings.reduce((acc, r) => acc + (r.duration || 0), 0) / 60)}m
               </div>
-              <div className="text-xs text-text-secondary">Total Time</div>
+              <div className="text-xs text-slate-600">Total Time</div>
             </div>
-            
+
             <div className="text-center">
               <div className="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full mx-auto mb-1">
                 <CheckSquare className="w-4 h-4 text-green-600" />
               </div>
-              <div className="text-lg font-semibold text-text-primary">
+              <div className="text-lg font-semibold text-slate-900">
                 {recordings.reduce((acc, r) => acc + r.actionItems.length, 0)}
               </div>
-              <div className="text-xs text-text-secondary">Action Items</div>
+              <div className="text-xs text-slate-600">Action Items</div>
             </div>
-            
+
             <div className="text-center">
               <div className="flex items-center justify-center w-8 h-8 bg-purple-100 rounded-full mx-auto mb-1">
                 <Users className="w-4 h-4 text-purple-600" />
               </div>
-              <div className="text-lg font-semibold text-text-primary">
+              <div className="text-lg font-semibold text-slate-900">
                 {recordings.length}
               </div>
-              <div className="text-xs text-text-secondary">Meetings</div>
+              <div className="text-xs text-slate-600">Meetings</div>
             </div>
           </div>
         </div>

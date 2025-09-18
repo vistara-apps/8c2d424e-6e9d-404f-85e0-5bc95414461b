@@ -4,19 +4,19 @@ import { useState } from 'react';
 import { Menu, Settings, User } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Sheet } from './ui/Sheet';
-import { useMiniKit } from '@coinbase/minikit';
+import { useOnchainKit } from '@coinbase/onchainkit';
 
 export function AppBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useMiniKit();
+  const { user } = useOnchainKit();
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-surface/80 backdrop-blur-sm border-b border-gray-200">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div className="px-4 py-3 max-w-lg mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
+            <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -31,7 +31,7 @@ export function AppBar() {
                 />
               </svg>
             </div>
-            <span className="text-lg font-semibold text-text-primary">
+            <span className="text-lg font-semibold text-slate-900">
               EchoScribe
             </span>
           </div>
@@ -62,20 +62,20 @@ export function AppBar() {
               <User className="w-5 h-5 text-gray-600" />
             </div>
             <div>
-              <p className="font-medium text-text-primary">
+              <p className="font-medium text-slate-900">
                 {user?.displayName || 'Guest User'}
               </p>
-              <p className="text-sm text-text-secondary">Free Plan</p>
+              <p className="text-sm text-slate-600">Free Plan</p>
             </div>
           </div>
 
           <nav className="space-y-2">
             <button className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 transition-smooth">
               <Settings className="w-5 h-5 text-gray-600" />
-              <span className="text-text-primary">Settings</span>
+              <span className="text-slate-900">Settings</span>
             </button>
-            
-            <button className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 transition-smooth">
+
+            <button className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 transition-colors duration-200">
               <svg
                 className="w-5 h-5 text-gray-600"
                 fill="none"
@@ -89,10 +89,10 @@ export function AppBar() {
                   d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <span className="text-text-primary">Help & Support</span>
+              <span className="text-slate-900">Help & Support</span>
             </button>
-            
-            <button className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 transition-smooth">
+
+            <button className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 transition-colors duration-200">
               <svg
                 className="w-5 h-5 text-gray-600"
                 fill="none"
@@ -106,7 +106,7 @@ export function AppBar() {
                   d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
                 />
               </svg>
-              <span className="text-text-primary">Upgrade to Premium</span>
+              <span className="text-slate-900">Upgrade to Premium</span>
             </button>
           </nav>
         </div>
