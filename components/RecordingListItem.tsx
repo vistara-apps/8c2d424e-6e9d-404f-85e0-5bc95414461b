@@ -33,24 +33,24 @@ export function RecordingListItem({
 
   return (
     <div
-      className="bg-surface rounded-lg p-4 shadow-card hover:shadow-lg transition-smooth cursor-pointer"
+      className="bg-white rounded-lg p-4 shadow-lg border border-gray-200 hover:shadow-xl transition-colors duration-200 cursor-pointer"
       onClick={onClick}
     >
       <div className="flex items-start justify-between mb-2">
         <div className="flex-1">
-          <h3 className="font-medium text-text-primary line-clamp-1">
+          <h3 className="font-medium text-slate-900 line-clamp-1">
             {recording.meetingTitle}
           </h3>
           <div className="flex items-center space-x-2 mt-1">
-            <span className="text-sm text-text-secondary">
+            <span className="text-sm text-slate-600">
               {formatDate(recording.startTime)}
             </span>
             {recording.duration && (
               <>
-                <span className="text-text-secondary">•</span>
+                <span className="text-slate-600">•</span>
                 <div className="flex items-center space-x-1">
-                  <Clock className="w-3 h-3 text-text-secondary" />
-                  <span className="text-sm text-text-secondary">
+                  <Clock className="w-3 h-3 text-slate-600" />
+                  <span className="text-sm text-slate-600">
                     {formatDuration(recording.duration)}
                   </span>
                 </div>
@@ -73,8 +73,8 @@ export function RecordingListItem({
       {recording.actionItems.length > 0 && (
         <div className="space-y-2">
           <div className="flex items-center space-x-1">
-            <CheckCircle className="w-3 h-3 text-text-secondary" />
-            <span className="text-xs text-text-secondary">
+            <CheckCircle className="w-3 h-3 text-slate-600" />
+            <span className="text-xs text-slate-600">
               {recording.actionItems.length} action item{recording.actionItems.length !== 1 ? 's' : ''}
             </span>
           </div>
@@ -87,7 +87,7 @@ export function RecordingListItem({
               />
             ))}
             {recording.actionItems.length > 2 && (
-              <span className="text-xs text-text-secondary bg-gray-100 px-2 py-1 rounded-full">
+              <span className="text-xs text-slate-600 bg-gray-100 px-2 py-1 rounded-full">
                 +{recording.actionItems.length - 2} more
               </span>
             )}
@@ -99,7 +99,7 @@ export function RecordingListItem({
       {recording.status === 'processing' && (
         <div className="mt-3 flex items-center space-x-2">
           <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-          <span className="text-sm text-text-secondary">
+          <span className="text-sm text-slate-600">
             Transcribing and analyzing...
           </span>
         </div>
@@ -108,7 +108,7 @@ export function RecordingListItem({
       {/* Summary Preview */}
       {recording.summary && recording.status === 'completed' && (
         <div className="mt-3 p-3 bg-gray-50 rounded-md">
-          <p className="text-sm text-text-secondary line-clamp-2">
+          <p className="text-sm text-slate-600 line-clamp-2">
             {recording.summary}
           </p>
         </div>

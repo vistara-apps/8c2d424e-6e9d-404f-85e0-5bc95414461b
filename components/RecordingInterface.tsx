@@ -139,28 +139,28 @@ export function RecordingInterface() {
   }, [recordingState.isRecording]);
 
   return (
-    <div className="bg-surface rounded-lg p-6 shadow-card">
+    <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-200">
       {/* Recording Visualizer */}
       <div className="flex flex-col items-center space-y-4">
         <div className={`
-          w-24 h-24 rounded-full flex items-center justify-center transition-smooth
-          ${recordingState.isRecording 
-            ? 'bg-red-500 recording-pulse' 
+          w-24 h-24 rounded-full flex items-center justify-center transition-colors duration-200
+          ${recordingState.isRecording
+            ? 'bg-red-500 recording-pulse'
             : 'bg-gray-100 hover:bg-gray-200'
           }
         `}>
           <Mic className={`
-            w-8 h-8 transition-smooth
+            w-8 h-8 transition-colors duration-200
             ${recordingState.isRecording ? 'text-white' : 'text-gray-600'}
           `} />
         </div>
 
         {/* Duration Display */}
         <div className="text-center">
-          <div className="text-2xl font-bold text-text-primary">
+          <div className="text-2xl font-bold text-slate-900">
             {formatDuration(recordingState.duration)}
           </div>
-          <div className="text-sm text-text-secondary">
+          <div className="text-sm text-slate-600">
             {recordingState.isRecording 
               ? recordingState.isPaused 
                 ? 'Recording paused' 
