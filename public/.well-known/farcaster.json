@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "EchoScribe",
+    "subtitle": "Built with Zara",
+    "description": "EchoScribe is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://8c2d424e6e9d404f85e05bc95414461b-c1cr.vercel.app",
+    "splashImageUrl": "https://8c2d424e6e9d404f85e05bc95414461b-c1cr.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://8c2d424e6e9d404f85e05bc95414461b-c1cr.vercel.app/image.png",
+    "tagline": "EchoScribe",
+    "screenshotUrls": [
+      "https://8c2d424e6e9d404f85e05bc95414461b-c1cr.vercel.app/screenshot.png",
+      "https://8c2d424e6e9d404f85e05bc95414461b-c1cr.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://8c2d424e6e9d404f85e05bc95414461b-c1cr.vercel.app/api/webhook"
+  }
+}
